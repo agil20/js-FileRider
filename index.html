@@ -5,8 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-<body>
+<style>
+.my-card{
+display: none;
     
+}
+
+</style>
+
+<body>
+
+    <form>
+        <div class="form-group ">
+          <label for="exampleInputEmail1">Name</label> <br>
+          <input type="text" id="1"  >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Soyad</label> <br>
+          <input type="text" id="2" >
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Username</label> <br>
+            <input type="text" id="3">
+          </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Image</label> <br>
+            <input type="file" id="3">
+          </div> 
+
+       
+        <button id="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="card my-card " style="width: 18rem;">
+        <img class="card-img-top" src="" alt="Card image cap">
+        <div class="card-body">
+         <div class="name"></div>
+         <div class="surname"></div>
+         <div class="username"></div>
+        </div>
+      </div>
 </body>
+<script src="./script.js"></script>
 </html>
