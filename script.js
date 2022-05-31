@@ -8,7 +8,7 @@ let card=document.getElementById("cards")
 let namecard=document.getElementById("name")
 let surnamecard=document.getElementById("surname")
 let usernamecard=document.getElementById("username")
-
+let imgcard=document.getElementById("imagecard")
 window.onload =function(){
     let localname=localStorage.getItem("Name")
 let localsurname=localStorage.getItem("Surname")
@@ -32,7 +32,6 @@ sumbit.onclick=function(){
 localStorage.setItem("Name",name.value)
 localStorage.setItem("Surname",surname.value)
 localStorage.setItem("username",username.value)
-localStorage.setItem("image",image.value)
 let localname=localStorage.getItem("Name")
 let localsurname=localStorage.getItem("Surname")
 let localusername=localStorage.getItem("username")
