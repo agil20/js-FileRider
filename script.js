@@ -8,26 +8,26 @@ let card=document.getElementById("cards")
 let namecard=document.getElementById("name")
 let surnamecard=document.getElementById("surname")
 let usernamecard=document.getElementById("username")
-let imgcard=document.getElementById("imagecard")
+let cardImg = document.getElementById("imagecard")
+let img = "download.jfif";
+
+let locImage;
+
+
 window.onload =function(){
-    let localname=localStorage.getItem("Name")
-let localsurname=localStorage.getItem("Surname")
-let localusername=localStorage.getItem("username")
+    card.classList.remove("my-card")
+
+     localname=localStorage.getItem("Name")
+ localsurname=localStorage.getItem("Surname")
+ localusername=localStorage.getItem("username")
+ let LSImage = localStorage.getItem("img")
+ cardImg.setAttribute("src", LSImage);
+
     namecard.innerHTML=localname
     surnamecard.innerHTML=localsurname
     usernamecard.innerHTML=localusername
 }
-image.addEventListener("change",function(ev)
-{
-    for (const file of ev.target.files) {
-      let reader=new FileReader();
-      reader.onloadend=function(ev){
-console.log(ev.target);
-      }
-reader.readAsDataURL(file)
-    }
-}
-)
+
 sumbit.onclick=function(){
 localStorage.setItem("Name",name.value)
 localStorage.setItem("Surname",surname.value)
@@ -35,12 +35,25 @@ localStorage.setItem("username",username.value)
 let localname=localStorage.getItem("Name")
 let localsurname=localStorage.getItem("Surname")
 let localusername=localStorage.getItem("username")
+localStorage.setItem("img", locImage)
 
-if(name.value!=""&&surname.value!=""&& username.value!=""){
-    card.classList.remove("my-card")
+
+if(name.value!=""&&surname.value!=""&& username.value!=""&& image.value!="" ){
     namecard.innerHTML=localname
     surnamecard.innerHTML=localsurname
     usernamecard.innerHTML=localusername
-    card.classList.remove("my-card")
+    cardImg.setAttribute("src", LSImage);
+
 }
 }
+
+image.addEventListener("change", (e) => {
+    for (const file of e.target.files) {
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = function (image) {
+        locImage = image.target.result;
+      };
+    }
+  });
+  
